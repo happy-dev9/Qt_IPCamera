@@ -6,6 +6,8 @@
 #include <QVideoWidget>
 #include <QAudioOutput>
 #include <QNetworkAccessManager>
+#include <QPushButton>
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class CameraWidget; }
@@ -23,13 +25,19 @@ private:
     Ui::CameraWidget *ui;
 
 public:
-    QMediaPlayer *player;
-    QVideoWidget *videoWidget;
+    QMediaPlayer *ipVideoPlayer;
+    QMediaPlayer *localVideoPlayer;
     QAudioOutput *audioOutput;
-    QNetworkAccessManager *networkManager;
 
+    QVideoWidget *ipCameraVideoWidget;
+    QVideoWidget *localVideoWidget;
 
+    QPushButton *ipCameraVideoBtn;
+    QPushButton *localVideoBtn;
 
+public slots:
+    void ipCameraVideoPlay();
+    void localVideoPlay();
 
 };
 #endif // CAMERAWIDGET_H
